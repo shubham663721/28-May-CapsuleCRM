@@ -13,7 +13,7 @@ import pages.LoginPage;
 import pages.PeopleandOrg;
 import testBase.TestBase;
 import util.ExcelUtility;
-
+//This Test Case is to Verify Case added successfully or not
 public class CaseStatusVerification extends TestBase {
 	LoginPage loginPage;
 	PeopleandOrg peopleandOrg;
@@ -24,6 +24,7 @@ public CaseStatusVerification() {
 	super();
 }
 
+//This Method will Initialize Browser
 @BeforeMethod()
 public void setup() {
 	Initialization();
@@ -33,12 +34,14 @@ public void setup() {
 	cases = new Cases();
 }
 
+//This Data Provider will read data from AddPerson sheet from Excel file
 @DataProvider
 public Object[][] getCapsuleCRMTestData() throws IOException{
 	Object data[][] = ExcelUtility.getTestData("AddPerson");
 	return data;
 }
 
+//This Test case is to Verify People and Organization Page and Cases page
 @Test(dataProvider="getCapsuleCRMTestData")
 public void validateAddPerson(String title, String firstName, String lastName, String jobTitle, String org, String Phone, String CaseName, String TagV) throws InterruptedException {
 	String titleofPage = loginPage.login();
@@ -59,6 +62,7 @@ public void validateAddPerson(String title, String firstName, String lastName, S
      
 }
 
+//This method will close the Browser after test case Execution
 @AfterMethod()
 public void tearDown() {
 	driver.quit();

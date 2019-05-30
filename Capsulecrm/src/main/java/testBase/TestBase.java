@@ -27,7 +27,7 @@ public TestBase() {
 			e.printStackTrace();
 		}	
 }
-
+//This method will be used Initialize Browser
 public static void Initialization() {
 	String Browser = prop.getProperty("Browser");
 	if(Browser.equalsIgnoreCase("chrome")) {

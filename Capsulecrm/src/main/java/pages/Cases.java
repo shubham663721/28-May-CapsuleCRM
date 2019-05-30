@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import testBase.TestBase;
-
+//This Class is to Verify Cases
 public class Cases extends TestBase {
 
 	@FindBy(xpath="//a[@aria-label='Cases']")
@@ -35,12 +35,13 @@ public class Cases extends TestBase {
     WebElement caseStatus;
 	@FindBy(xpath="//a[@class='ember-view']")
     WebElement nameVerification;
-	
+	// Constructor to initialize elements
 	public Cases() {
 		PageFactory.initElements(driver, this);
 		
 	}
 	
+	//This Method is to Open Case Window
 	public String ClickCasesIcon() throws InterruptedException {
 		Cases.click();
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -48,6 +49,7 @@ public class Cases extends TestBase {
 	   return titleIs;
 	}
 	
+	//This Method is Add Case
 	public String AddCase(String fn, String ln, String caseN, String tagValue) throws InterruptedException {
 		addCaseButton.click();
 		caseRelatedto.sendKeys(fn + " " + ln);
@@ -61,11 +63,14 @@ public class Cases extends TestBase {
 	String CaseTitle =	caseTitle.getText();
 	return CaseTitle;
 	}
+	
+   	//This Method is to Verify Name
 	public String nameV() {
 		String name = nameVerification.getText();
 		System.out.println("name is--> " + name);
 			return name;
 		}
+	//This Method is verify Case Status
 	public String CaseStatus() {
 	String caseS =	caseStatus.getText();
 	return caseS;

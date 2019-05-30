@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import testBase.TestBase;
-
+//This Class is to Verify Login Page
 public class LoginPage extends TestBase {
 
 	@FindBy(xpath="//input[@id='login:usernameDecorate:username']")
@@ -15,10 +15,12 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath="//input[@id='login:login']")
 	WebElement loginButton;
 	
+	//This Method is to Open Case Window
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
 	}
 	
+	//This Method is to Login into Application and Verify Title
 	public String login() {
 		userName.sendKeys(prop.getProperty("userName"));
 		password.sendKeys(prop.getProperty("password"));
